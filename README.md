@@ -1,55 +1,59 @@
-python-package-boilerplate
-==========================
-
-[![Build Status](https://travis-ci.org/mtchavez/python-package-boilerplate.png?branch=master)](https://travis-ci.org/mtchavez/python-package-boilerplate)
-[![Requires.io](https://requires.io/github/mtchavez/python-package-boilerplate/requirements.svg?branch=master)](https://requires.io/github/mtchavez/python-package-boilerplate/requirements?branch=master)
-
-Boilerplate for a Python Package
-
-## Package
-
-Basic structure of package is
+Sure, here's a sample README.MD file for your "Indexipy" package:
 
 ```
-├── README.md
-├── packagename
-│   ├── __init__.py
-│   ├── packagename.py
-│   └── version.py
-├── pytest.ini
-├── requirements.txt
-├── setup.py
-└── tests
-    ├── __init__.py
-    ├── helpers
-    │   ├── __init__.py
-    │   └── my_helper.py
-    ├── tests_helper.py
-    └── unit
-        ├── __init__.py
-        ├── test_example.py
-        └── test_version.py
-```
+# Indexipy
 
-## Requirements
+Indexipy is a Python package that brings advanced indexing concepts from NumPy to Python containers, such as lists, tuples, and dictionaries. The package is designed to make indexing more intuitive and powerful, providing a set of easy-to-use tools for accessing and manipulating elements in your containers.
 
-Package requirements are handled using pip. To install them do
+## Installation
+
+To install Indexipy, simply use pip:
 
 ```
-pip install -r requirements.txt
+pip install indexipy
 ```
 
-## Tests
+## Usage
 
-Testing is set up using [pytest](http://pytest.org) and coverage is handled
-with the pytest-cov plugin.
+Indexipy provides a set of functions and classes for indexing containers. Here are some examples:
 
-Run your tests with ```py.test``` in the root directory.
+```python
+from indexipy import Index
 
-Coverage is ran by default and is set in the ```pytest.ini``` file.
-To see an html output of coverage open ```htmlcov/index.html``` after running the tests.
+import numpy as np
 
-## Travis CI
+# Create an Array object from a list
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+my_array = Array(my_list)
 
-There is a ```.travis.yml``` file that is set up to run your tests for python 2.7
-and python 3.2, should you choose to use it.
+# Index using a list of indices
+result = my_array[[0, 2, 4, 6, 8]]
+# Output: [1, 3, 5, 7, 9]
+print(result)
+
+# Index using a boolean mask
+mask = np.array([True, False, True, False, True, False, True, False, True])
+result = my_array[mask]
+# Output: [1, 3, 5, 7, 9]
+print(result)
+
+# Index using a slice and a list of indices
+result = my_array[1:6:2, [1, 3]]
+# Output: [[2, 4], [4, 6], [6, 8]]
+print(result)
+```
+
+Indexipy also provides some additional features, such as slicing, fancy indexing, and boolean indexing.
+
+For more detailed usage examples, please see the [documentation](https://indexipy.readthedocs.io/en/latest/).
+
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute to Indexipy, please fork the repository and submit a pull request.
+
+## License
+
+Indexipy is licensed under the [MIT License](https://github.com/your/your-project/blob/master/LICENSE).
+```
+
+O
